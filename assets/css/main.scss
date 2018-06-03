@@ -1,0 +1,50 @@
+html, body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: lightgray;
+  margin: 0;
+  padding: 1em;
+}
+
+.container {
+  margin: 1em;
+  display: flex;
+  align-items: flex-start;
+
+  .side {
+    margin-right: 1em;
+    width: 20em;
+
+    .controls {
+      padding: 1em;
+      display: flex;
+      flex-flow: column nowrap;
+      margin-bottom: 1em;
+    }
+
+    .logs {
+      pre {
+        margin: 1em;
+      }
+    }
+  }
+  .chart-area {
+    h2 {
+      background-color: lightgray;
+      margin: 0;
+      padding: 1em;
+    }
+    > div > div, > div > canvas {
+      margin: 1em;
+    }
+  }
+}
+
+.controls, .logs, .chart-area {
+  border: 2px solid gray;
+  border-radius: 10px;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "chart-time-series-benchmark",
+  "version": "1.0.0",
+  "description": "Framework to benchmark the various javascript chart libraries on large time series dataset",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.4.0",
+    "billboard.js": "^1.4.1",
+    "chart.js": "^2.7.2",
+    "dygraphs": "^2.1.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1"
+  }
+}
