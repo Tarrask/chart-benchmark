@@ -10,15 +10,8 @@
 <script>
 export default {
   data() {
-    const testRoutes = this.$router.options.routes.find(el => el.path === '/test');
-    const libraries = testRoutes.children.reduce((acc, route) => {
-      if(route.path !== '') {
-        acc.push({ name: route.path, url: '/test/' + route.path });
-      }
-      return acc;
-    }, []);
     return {
-      libraries
+      libraries: this.$store.state.libraries
     };
   }
 };

@@ -1,7 +1,7 @@
 <template>
 <div>
   <h2><a href="http://dygraphs.com/" target="_blank">dygraphs</a></h2>
-  <div ref="graph" class="chart"></div>
+  <div ref="chart" class="chart"></div>
 </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     async runBenchmark(dataset) {
-      const graph = new Dygraph(this.$refs.graph, dataset);
+      new Dygraph(this.$refs.chart, dataset);
     }
   },
   async mounted() {

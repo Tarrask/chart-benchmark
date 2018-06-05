@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&text=1234567890.');
 html, body {
   font-family: sans-serif;
   margin: 0;
@@ -10,20 +11,58 @@ h1 {
   padding: 1em;
 }
 
+h2 {
+  background-color: lightgray;
+  margin: 1em 0 0 0;
+  padding: 1em;
+
+  &:first-child {
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+  }
+
+  small {
+    color: dimgray;
+  }
+}
+
+a.nuxt-link-exact-active {
+  color: gray;
+}
+
 .container {
   margin: 1em;
   display: flex;
   align-items: flex-start;
+
+  &.results {
+    flex-flow: column wrap;
+    align-items: stretch;
+    margin: 0;
+  }
 
   .side {
     margin-right: 1em;
     width: 20em;
 
     .controls {
-      padding: 1em;
+      padding: 0.5em 1em;
       display: flex;
       flex-flow: column nowrap;
       margin-bottom: 1em;
+
+      > * {
+        margin: 0.5em 0;
+      }
+
+      select {
+        text-align: right;
+        padding: 0.5em;
+      }
+
+      button {
+        padding: 0.5em;
+      }
     }
 
     .logs {
@@ -33,11 +72,6 @@ h1 {
     }
   }
   .chart-area {
-    h2 {
-      background-color: lightgray;
-      margin: 0;
-      padding: 1em;
-    }
     > div > div, > div > canvas {
       margin: 1em;
     }
@@ -47,4 +81,59 @@ h1 {
 .controls, .logs, .chart-area {
   border: 2px solid gray;
   border-radius: 10px;
+}
+
+
+//
+// TABLE
+//
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  td, th {
+    font-family: 'Inconsolata', monospace;
+    padding: 0.5em;
+    &.text-left {
+      text-align: left;
+    }
+    &.sans-serif {
+      font-family: inherit;
+    }
+    &.green {
+      background-color: GreenYellow;
+    }
+    &.yellow {
+      background-color: Gold;
+    }
+    &.red {
+      background-color: OrangeRed;
+    }
+  }
+  td {
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+  }
+  thead tr:last-child th {
+    border-bottom: 1px solid  gray;
+  }
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  &:last-child tbody tr:last-child td:last-child {
+    border-radius: 0 0 8px 0;
+  }
+}
+
+
+//
+// PAGES TRANSITIONS
+//
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+  opacity: 1;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
 }
