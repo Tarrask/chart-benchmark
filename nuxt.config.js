@@ -20,6 +20,19 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  build: {
+    extend(config, { isClient }) {
+      if(isClient) {
+        config.plugins.forEach(plugin => {
+          if(plugin.constructor.name === 'UglifyJsPlugin') {
+            plugin.options.uglifyOptions.mangle = {
+              reserved: ['$super']
+            }
+          }
+        });
+      }
+    }
+  },
   /*
   ** Global CSS
   */
